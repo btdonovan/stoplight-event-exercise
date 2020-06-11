@@ -79,5 +79,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // [stop-color]: https://github.com/gSchool/stoplight-event-exercise/blob/master/index.css#L39
   // [slow-color]: https://github.com/gSchool/stoplight-event-exercise/blob/master/index.css#L43
   // [go-color]: https://github.com/gSchool/stoplight-event-exercise/blob/master/index.css#L47
+
+  document.getElementById('controls').addEventListener('click', function(event) {
+    let eventButton = event.target.textContent;
+    let eventLight = document.getElementById(`${eventButton.toLowerCase()}Light`);
+    if (eventLight.classList.length > 1) {
+      console.log(`${eventButton} bulb on`);
+    } else {
+      console.log(`${eventButton} bulb off`);
+    }
+  });
 });
 
